@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body, html {
+
+    background: #0f0f11;
+    box-sizing: border-box;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+
+}
+  
+
+h1 {
+    font-family: Helvetica;
+    color: #ec1084;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    padding: 30px 75px 10px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+   
+}
+
+.container .completed h2 {
+    color: #ec1084;
+}
+
+.container .undone label, .container .completed label {
+    position: relative;
+    display: block;
+    margin: 40px 0;
+    color: #ec1084;
+    cursor: pointer;
+
+ 
+}
+
+.container .completed span { 
+    text-decoration: line-through;
+}
+
+.container .undone input[type="checkbox"] {
+    -webkit-appearance: none;
+    
+}
+
+.container .undone i {
+    position: relative;
+    top: 7px; 
+    display: inline-block;
+    width: 25px; 
+    height: 25px; 
+    border-radius: 50%;
+    border: 2px solid #ec1084;
+
+}
+
+.container .undone button {
+    position: absolute;
+    top: -7px; 
+    display: inline-block;
+    width: 25px; 
+    margin: 0; 
+    padding: 0; 
+    height: 25px; 
+    left: 300px;
+    color: #fff;
+    background-color:  #0f0f11;
+    border: none;
+    transition: .6s;
+    overflow: hidden;
+}
+
+.container .completed button {
+    position: absolute;
+    top: -7px; 
+    display: inline-block;
+    width: 25px; 
+    margin: 0; 
+    padding: 0; 
+    height: 25px; 
+    left: 365px;
+    color: #fff;
+    background-color:  #0f0f11;
+    border: none;
+    transition: .6s;
+    overflow: hidden;
+}
+
+.container .undone button:focus, .container .completed button:focus {
+    outline: none;
+}
+
+.container .undone button:after, .container .completed button:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,.2);
+    width: 1%;
+    height: 50%;
+    left: 0px;
+    top: 0;
+    opacity: 0%;
+    filter: blur(10px);
+    transform: translateX(-100px) scaleX(-15deg);
+}
+
+.container .undone button:hover, .container .completed button:hover {
+    background: none;
+    color: #ec1084;
+    cursor: pointer;
+}
+ 
+ 
+.container .undone button:hover:after, .container .completed button:hover:after {
+  transform: translateX(300px) skewX(-15deg);
+  opacity: 1;
+  transition: .7s;
+}
+
+.container .undone input[type="checkbox"]:checked ~ i {
+    top: 0px; 
+    border-top: none;
+    border-right: none;
+    height: 15px;
+    width: 25px; 
+    border-radius: 0%;
+    transform: rotate(-45deg);
+}
+
+
+.container .undone span {
+    position: relative;
+    left: 40px; 
+    transition: 0.5s;
+    color: #fff;
+
+}
+.container .undone span:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0; 
+    width: 100%;
+    height: 1px;
+    background: #ec1084;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s; 
+
+}
+
+.container .undone input[type="checkbox"]:checked ~ span:before {
+    transform: translateY(-50%) scaleX(1);
+    transform-origin: right;
+    transition: transform 0.5s;
+    position: absolute;
+    top: 50%;
+    left: 0; 
+    width: 100%;
+    height: 1px;
+}
+
+.container .undone input[type="checkbox"]:checked ~ span {
+    color: #ec1084;
+}
+
+
+.container .but{
+    background: none;
+    color: #ccc;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ec1084;
+    font-size: 15px;
+    border-radius: 4px;
+    transition: .6s;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    left: 300px;
+}
+
+.container .but:focus {
+    outline: none;
+}
+   
+   
+.container .but:hover {
+      background: #ec1084;
+      cursor: pointer;
+}
+   
+.container .but:hover:before{
+    transform: translateX(300px) skewX(-15deg);
+    opacity: .6;
+    transition: .7s;
+}
+   
+.container .but:hover:after {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: .7s;
+ }

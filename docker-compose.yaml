@@ -1,0 +1,38 @@
+version: '2.4'
+services:
+  frontend:
+    build: ./frontend
+    image: 'todo-app-frontend:0.0.7'
+    ports:
+      - '8083:80'
+    mem_limit: 50mb
+    restart: always
+  backend:
+    build:
+      context: ./backend
+    image: 'todo-app-backend:0.0.7'
+    ports: 
+      - "3000:3000"
+    privileged: true
+    depends_on:
+      - db
+    restart: always
+    mem_limit: 500mb
+
+  db:
+    image: mysql:8-debian
+    restart: always
+    ports: 
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: tododatabase
+      MYSQL_PASSWORD: password
+      MYSQL_USER: pavel
+      MYSQL_ROOT_PASSWORD: password
+
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8082:8080

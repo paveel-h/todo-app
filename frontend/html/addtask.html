@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesAddTask.css">
+    <title>MyToDoApp</title>
+</head>
+<body>
+    <h1>My ToDo list</h1>
+    
+    <div class="addTask">
+        <form autocomplete="off">
+            <div class="inputTask">
+                <input type="text" name="task" id="task" required="">
+                <label for="task">Task</label>
+            </div>
+            <input type="submit" value="Add"  onclick="viewTasks()" >
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

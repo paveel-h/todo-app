@@ -1,0 +1,96 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f0f11;
+}
+  
+
+h1 {
+    font-family: Helvetica;
+    color: #ec1084;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.addTask .inputTask {
+  position: relative;
+  width: 400px;
+}
+
+
+.addTask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+
+.addTask .inputTask input {
+    width: 100%;
+    padding: 10px 0;
+    font-family: Helvetica;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+.addTask .inputTask label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+    text-transform: capitalize;
+}
+  
+
+.addTask .inputTask input:focus ~ label,
+.addTask .inputTask input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #ec1084;
+  font-size: 10px;
+}
+
+.addTask form {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 5px;
+  letter-spacing: 4px
+}
+
+.addTask input[type=submit]:hover {
+  background-color: #ec1084;
+}
+
+.addTask input[type=submit]{
+	background: #576E86;
+  border: none;
+  width: 50%;
+	padding: 8px 10px 8px 10px;
+	border-radius: 5px;
+	color: #A8BACE;
+}
